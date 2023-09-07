@@ -1,17 +1,67 @@
-import Guide from '@/components/Guide';
-import { trim } from '@/utils/format';
-import { PageContainer } from '@ant-design/pro-components';
-import { useModel } from '@umijs/max';
-import styles from './index.less';
+import { ModalForm, ProCard } from '@ant-design/pro-components';
+import React, { useEffect, useState } from 'react';
+import { request } from 'umi';
+import EventDetails, { EventInfo } from './components/EventDetails';
 
 const HomePage: React.FC = () => {
-  const { name } = useModel('global');
+  const [modalVisit, setModalVisit] = useState(false);
+  const [events, setEvents] = useState<EventInfo[]>([]);
+  const [eventDetails, setEventDetails] = useState(undefined);
+
+  const getEventList = () => {
+    request('/api/v1/queryEventList').then((res) => {
+      setEvents(res.data.list);
+    });
+  };
+
+  useEffect(() => {
+    getEventList();
+  }, []);
+
+  useEffect(() => {
+    console.log(eventDetails);
+  }, [eventDetails]);
+
   return (
-    <PageContainer ghost>
-      <div className={styles.container}>
-        <Guide name={trim(name)} />
-      </div>
-    </PageContainer>
+    <>
+      <ProCard
+        ghost
+        gutter={[16, 16]}
+        title="Events List"
+        wrap
+        style={{ marginBlockStart: 20 }}
+      >
+        {events &&
+          events.map((event) => (
+            <ProCard
+              key={event.id}
+              colSpan={6}
+              layout="center"
+              hoverable
+              bordered
+              onClick={() => {
+                setModalVisit(true);
+                setEventDetails(events[event.id]);
+              }}
+            >
+              {event.title}
+            </ProCard>
+          ))}
+      </ProCard>
+      
+      <ModalForm
+        open={modalVisit}
+        title="Event Details"
+        onFinish={async () => {
+          return true;
+        }}
+        onOpenChange={setModalVisit}
+      >
+        {eventDetails && (
+          <EventDetails details={eventDetails}></EventDetails>
+        )}
+      </ModalForm>
+    </>
   );
 };
 

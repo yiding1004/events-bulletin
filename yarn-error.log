@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/Cellar/node/20.3.0_1/bin/node /usr/local/Cellar/yarn/1.22.19/libexec/bin/yarn.js install
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.3.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/yiding/Library/Caches/Yarn/v6/npm-globals-13.21.0-163aae12f34ef502f5153cfbdd3600f36c63c571-integrity/node_modules/globals/globals.json' -> '/Users/yiding/Desktop/working project/events-bulletin/node_modules/@eslint/eslintrc/node_modules/globals/globals.json'
+
+npm manifest: 
+  {
+    "private": true,
+    "author": "",
+    "scripts": {
+      "dev": "max dev",
+      "build": "max build",
+      "format": "prettier --cache --write .",
+      "prepare": "husky install",
+      "postinstall": "max setup",
+      "setup": "max setup",
+      "start": "npm run dev"
+    },
+    "dependencies": {
+      "@ant-design/icons": "^5.2.6",
+      "@ant-design/pro-components": "^2.6.16",
+      "@umijs/max": "^4.0.79",
+      "antd": "^5.8.6"
+    },
+    "devDependencies": {
+      "@types/react": "^18.2.21",
+      "@types/react-dom": "^18.2.7",
+      "husky": "^8.0.3",
+      "lint-staged": "^14.0.1",
+      "prettier": "^3.0.3",
+      "prettier-plugin-organize-imports": "^3.2.3",
+      "prettier-plugin-packagejson": "^2.4.5",
+      "typescript": "^5.2.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

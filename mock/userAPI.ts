@@ -3,7 +3,7 @@ const users = [
   { id: 1, name: 'Fish', nickName: 'B', gender: 'FEMALE' },
 ];
 
-const events = [
+export const events = [
   {
     id: 0,
     title: 'Party1',
@@ -13,8 +13,40 @@ const events = [
     image: 'url1',
   },
   {
-    id: 2,
+    id: 1,
     title: 'Party2',
+    date: '2023-07-27T18:34:55.985+00:00',
+    location: 'Los Angeles',
+    description: 'description2',
+    image: 'url2',
+  },
+  {
+    id: 2,
+    title: 'Party3',
+    date: '2023-07-27T18:34:55.985+00:00',
+    location: 'Los Angeles',
+    description: 'description2',
+    image: 'url2',
+  },
+  {
+    id: 3,
+    title: 'Party4',
+    date: '2023-07-27T18:34:55.985+00:00',
+    location: 'Los Angeles',
+    description: 'description2',
+    image: 'url2',
+  },
+  {
+    id: 4,
+    title: 'Party5',
+    date: '2023-07-27T18:34:55.985+00:00',
+    location: 'Los Angeles',
+    description: 'description2',
+    image: 'url2',
+  },
+  {
+    id: 5,
+    title: 'Party6',
     date: '2023-07-27T18:34:55.985+00:00',
     location: 'Los Angeles',
     description: 'description2',
