@@ -18,10 +18,6 @@ const HomePage: React.FC = () => {
     getEventList();
   }, []);
 
-  useEffect(() => {
-    console.log(eventDetails);
-  }, [eventDetails]);
-
   return (
     <>
       <ProCard
