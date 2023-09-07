@@ -1,4 +1,4 @@
-import { Layout, Row, Space, Typography } from 'antd';
+import { Layout, Row, Typography } from 'antd';
 
 export type EventInfo = {
   id: string;
@@ -16,16 +16,14 @@ type EventDetailsProps = {
 const EventDetails: React.FC<EventDetailsProps> = ({ details }) => {
   return (
     <Layout>
-      <Space size="small">
-        <Row>
-          <Typography.Title level={3}>
-            <strong>{details.title}</strong>
-          </Typography.Title>
-        </Row>
-        <Row>
-          <Typography.Paragraph>{details.description}</Typography.Paragraph>
-        </Row>
-      </Space>
+      <Row>
+        <Typography.Title level={3}>
+          <strong>{details.title}</strong>
+        </Typography.Title>
+      </Row>
+      <Row>
+        <Typography.Paragraph>{details.description}</Typography.Paragraph>
+      </Row>
     </Layout>
   );
 };
